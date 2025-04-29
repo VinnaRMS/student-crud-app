@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Button } from "@mui/material";
+import EditIcon from '@mui/icons-material/Edit';
 
 function StudentCard({ student, deleteStudent }) {
   const fallbackImage = "https://picsum.photos/64?grayscale";
@@ -22,8 +25,13 @@ function StudentCard({ student, deleteStudent }) {
           <p className="card-text">Section: {student.section}</p>
         </div>
         <div className="card-body">
-          <Link to={`/updatestudent/${student.id}`} className="card-link">EDIT</Link>
-          <button onClick={() => deleteStudent(student.id)} className="btn btn-link">DELETE</button>
+          {/* <Link to={`/updatestudent/${student.id}`} className="card-link">EDIT</Link> */}
+          <Button  color="secondary" className="mx-2" variant="contained" to={`/updatestudent/${student.id}`}
+                component={Link}
+                startIcon={<EditIcon></EditIcon>} >EDIT</Button>
+          {/* <button onClick={() => deleteStudent(student.id)} className="btn btn-link">DELETE</button> */}
+          <Button onClick={()=>deleteStudent(student.id)} color="error" 
+                variant="contained" startIcon={<DeleteIcon></DeleteIcon>}>DELETE</Button>
         </div>
       </div>
     </div>

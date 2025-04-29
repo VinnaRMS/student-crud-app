@@ -1,0 +1,67 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "studentName": "Sunil Kumar",
+      "rollNo": 1000,
+      "grade": "8",
+      "section": "A",
+      "admissionDate": "2025-04-28",
+      "profilePic": "https://randomuser.me/api/portraits/thumb/men/1.jpg"
+    },
+    {
+      "id": "2",
+      "studentName": "Amit Sharma",
+      "rollNo": "1000",
+      "grade": "2",
+      "section": "A",
+      "admissionDate": "2025-04-28",
+      "profilePic": "https://randomuser.me/api/portraits/thumb/men/2.jpg"
+    },
+    {
+      "id": "3",
+      "studentName": "Priya Singh",
+      "rollNo": 1002,
+      "grade": "8",
+      "section": "A",
+      "admissionDate": "2022-06-10",
+      "profilePic": "https://randomuser.me/api/portraits/thumb/woman/1.jpg"
+    },
+    {
+      "id": "4",
+      "studentName": "Ravi Kumar",
+      "rollNo": 1003,
+      "grade": "8",
+      "section": "A",
+      "admissionDate": "2022-06-10",
+      "profilePic": "https://randomuser.me/api/portraits/thumb/men/3.jpg"
+    },
+    {
+      "id": "5",
+      "studentName": "Anjali Verma",
+      "rollNo": 1004,
+      "grade": "8",
+      "section": "A",
+      "admissionDate": "2022-06-10",
+      "profilePic": "https://randomuser.me/api/portraits/thumb/woman/2.jpg"
+    },
+    {
+      "id": "2d15",
+      "studentName": "Ajay Shetty",
+      "rollNo": "10000",
+      "grade": "8",
+      "section": "D",
+      "admissionDate": "2025-04-01",
+      "profilePic": "test"
+    },
+    {
+      "id": "8d0c",
+      "studentName": "Michael Jackson",
+      "rollNo": "20000",
+      "grade": "7",
+      "section": "C",
+      "admissionDate": "2000-01-01",
+      "profilePic": "test"
+    }
+  ]
+}
