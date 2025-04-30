@@ -1,5 +1,5 @@
-const username="neoadmin@neosoftmail.com";
-const password="neoadmin321";
+const username="admin@neosoftmail.com";
+const password="admin123";
 
 export function checkLogin(adminemail, adminpass){
     // connect to backend pass email, password

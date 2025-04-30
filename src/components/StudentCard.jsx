@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Button } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
+import { Button } from "@mui/material";
+import { useCookies } from "react-cookie";
 
 function StudentCard({ student, deleteStudent }) {
   const fallbackImage = "https://picsum.photos/64?grayscale";
   const imageId = student.id % 20;
   const imageUrl = student.profilePic || `https://randomuser.me/api/portraits/thumb/men/${imageId}.jpg`;
+
+  const [cookie] = useCookies();
+  const navigate = useNavigate();
 
   return (
     <div className="col-md-4 mb-4">
@@ -24,15 +28,35 @@ function StudentCard({ student, deleteStudent }) {
           <p className="card-text">Grade: {student.grade}</p>
           <p className="card-text">Section: {student.section}</p>
         </div>
-        <div className="card-body">
-          {/* <Link to={`/updatestudent/${student.id}`} className="card-link">EDIT</Link> */}
-          <Button  color="secondary" className="mx-2" variant="contained" to={`/updatestudent/${student.id}`}
+
+        {
+          'admin' in cookie ? (
+            <div className="card-body">
+              <Button
+                color="secondary"
+                className="mx-2"
+                variant="contained"
+                to={`/updatestudent/${student.id}`}
                 component={Link}
-                startIcon={<EditIcon></EditIcon>} >EDIT</Button>
-          {/* <button onClick={() => deleteStudent(student.id)} className="btn btn-link">DELETE</button> */}
-          <Button onClick={()=>deleteStudent(student.id)} color="error" 
-                variant="contained" startIcon={<DeleteIcon></DeleteIcon>}>DELETE</Button>
-        </div>
+                startIcon={<EditIcon />}
+              >
+                EDIT
+              </Button>
+              <Button
+                onClick={() => deleteStudent(student.id)}
+                color="error"
+                variant="contained"
+                startIcon={<DeleteIcon />}
+              >
+                DELETE
+              </Button>
+            </div>
+          ) : (
+            <div className="card-body">
+              <p className="text-info"><small>Please login to update/delete the student</small></p>
+            </div>
+          )
+        }
       </div>
     </div>
   );
