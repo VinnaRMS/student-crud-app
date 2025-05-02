@@ -1,15 +1,6 @@
 {
   "students": [
     {
-      "id": "1",
-      "studentName": "Sunil Kumar",
-      "rollNo": 1000,
-      "grade": "8",
-      "section": "A",
-      "admissionDate": "2025-04-28",
-      "profilePic": "https://randomuser.me/api/portraits/thumb/men/1.jpg"
-    },
-    {
       "id": "2",
       "studentName": "Amit Sharma",
       "rollNo": "1000",
@@ -62,6 +53,15 @@
       "section": "C",
       "admissionDate": "2000-01-01",
       "profilePic": "test"
+    },
+    {
+      "id": "95ab",
+      "studentName": "Tom Cruise",
+      "rollNo": "7000",
+      "grade": "1",
+      "section": "A",
+      "admissionDate": "2020-01-01",
+      "profilePic": "https://randomuser.me/api/portraits/thumb/men/2.jpg"
     }
   ]
 }

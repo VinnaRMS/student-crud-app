@@ -16,7 +16,9 @@ import Dashboard from './components/Dashboard.jsx';
 import StudentList from './components/StudentList.jsx';
 import AdminLogin from './components/AdminLogin.jsx';
 import { getStudentById } from './model/studentcrud'; 
-import AuthGuard from './components/AuthGuard.jsx'; // You need to create this if not existing
+import AuthGuard from './components/AuthGuard.jsx'; 
+import { Provider } from 'react-redux';
+import store from './store.js'
 
 let routes = [
   {
@@ -49,7 +51,9 @@ let routes = [
 const crudrouter = createBrowserRouter(routes);
 
 createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
   <CookiesProvider>
     <RouterProvider router={crudrouter} />
   </CookiesProvider>
+  </Provider>
 );
