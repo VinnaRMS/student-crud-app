@@ -24,9 +24,11 @@ function StudentCard({ student, deleteStudent }) {
         />
         <div className="card-body">
           <h5 className="card-title">{student.studentName}</h5>
+          <p className="card-title">ID: {student.id}</p>
           <p className="card-text">Roll No: {student.rollNo}</p>
           <p className="card-text">Grade: {student.grade}</p>
           <p className="card-text">Section: {student.section}</p>
+          <p className="card-text">Admission Date: {student.admissionDate}</p>
         </div>
 
         {

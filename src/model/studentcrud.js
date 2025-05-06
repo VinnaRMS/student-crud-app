@@ -2,6 +2,32 @@ import axios  from "axios";
 
 const url="http://localhost:3000/students";
 
+// request interceptors
+axios.interceptors.request.use(
+    (request)=>{
+        console.log("in request interectpor:", request);
+        return request;
+    },
+    (error)=>{
+        console.log("in request interectpor:", error);
+        return Promise.reject(error);
+    }
+);
+//response interceptors
+axios.interceptors.response.use(
+    (response)=>{
+        if(Array.isArray(response.data)){
+            response.data.sort((std1,std2)=>std1.studentName.localeCompare(std2.studentName));
+        }
+        console.log("in response interectpor after sorting the array:", response);
+        return response;
+    },
+    (error)=>{
+        console.log("in response interectpor:", error);
+        return Promise.reject(error);
+    }
+);
+
 export  async function getAllStudents(){
     try {
         const response=await axios.get(url);
